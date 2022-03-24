@@ -29,7 +29,9 @@ jobs:
       - run: docker push numbbbbb/multi-api
       - run: docker push numbbbbb/multi-nginx
       - run: docker push numbbbbb/multi-worker
- 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
  
