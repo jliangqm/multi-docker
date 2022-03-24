@@ -5,7 +5,7 @@ services:
     mem_limit: 128m
     hostname: client
   server:
-    image: "numbbbbb/multi-server"
+    image: "numbbbbb/multi-api"
     mem_limit: 128m
     hostname: api
     environment:

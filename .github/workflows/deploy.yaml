@@ -32,9 +32,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate deployment package
-        run: zip -r deploy.zip . -x '*.git*'
- 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
         with:
@@ -45,4 +42,4 @@ jobs:
           existing_bucket_name: elasticbeanstalk-us-east-2-590690859319
           region: us-east-2
           version_label: ${{ github.sha }}
-          deployment_package: deploy.zip
+          deployment_package: docker-compose.yml
